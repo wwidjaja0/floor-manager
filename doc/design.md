@@ -1,25 +1,42 @@
 # Floor Manager Bot Design Doc and Roadmap
 
+The main design document for the Floor Manager Discord bot.
+
 ## Table of Contents
 
 - [Floor Manager Bot Design Doc and Roadmap](#floor-manager-bot-design-doc-and-roadmap)
   - [Table of Contents](#table-of-contents)
-  - [Features](#features)
+  - [Purpose](#purpose)
+  - [User Personas and Diagrams](#user-personas-and-diagrams)
+    - [User Flow Diagram](#user-flow-diagram)
+  - [Features and ADRs](#features-and-adrs)
     - [Table Management](#table-management)
     - [Ledger Management](#ledger-management)
     - [External Linking](#external-linking)
+  - [Other Technical Requirements](#other-technical-requirements)
   - [Roadmap](#roadmap)
-    - [Phase 1: Core Features](#phase-1-core-features)
-    - [Phase 2: Other Features](#phase-2-other-features)
-    - [Phase 3: Polishing and Optimization](#phase-3-polishing-and-optimization)
 
-## Features
+## Purpose
 
+what is the bot for (purpose?)
+
+## User Personas and Diagrams
+
+consideration of users, target audience
 There are three main kinds of users considered in our design:
 
 - Hosts: Users who create and manage poker tables.
 - Players: Users who join and play at poker tables.
 - Administrators: Users who manage the bot and its features or permissions.
+
+### User Flow Diagram
+
+diagrams and feature maps and such (how these users might use the bot and interact with it)
+
+## Features and ADRs
+
+main features
+secondary features
 
 ### Table Management
 
@@ -68,16 +85,25 @@ The bot will link to external apps to allow players to more conveniently speed u
 
 - [ ] **External Links**: Allow players to go to external apps through links provided by the bot, if they choose to do so. Otherwise, they can navigate to the apps themselves.
 
+## Other Technical Requirements
+
+- how will data be stored and managed in the bot
+- where the bot will be hosted
+- technologies and tools to use
+- specifics about response times and such
+
 ## Roadmap
 
-### Phase 1: Core Features
+move this to a project board or something and link it
+
+Phase 1: Core Features
 
 - Table Creation and Management
 - Table Joining and Leaving
 - Table Announcements
 - Table Chat
 
-### Phase 2: Other Features
+Phase 2: Other Features
 
 - External Linking
 - Table Ledger
@@ -85,7 +111,7 @@ The bot will link to external apps to allow players to more conveniently speed u
 - Table History
 - Player Ledger
 
-### Phase 3: Polishing and Optimization
+Phase 3: Polishing and Optimization
 
 - User Feedback and Iteration
 - Performance Optimization

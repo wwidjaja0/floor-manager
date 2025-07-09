@@ -8,7 +8,10 @@ A Discord bot for managing the "floor" for the Poker Tritons Discord server at U
 
 ## 🌟 Features
 
-Write out the key features here.
+- Table Management
+- Ledgers
+- Payment Verification
+- Host Accountability
 
 See the [design document](doc/design.md) for full design details.
 
@@ -16,15 +19,15 @@ See the [design document](doc/design.md) for full design details.
 
 ### Slash Commands
 
-| Command | Description | Usage |
-|---------|-------------|-------|
-
-TODO
+| Command | Description      | Usage |
+| ------- | ---------------- | ----- |
+| help    | See all commands | /help |
 
 ### Admin Commands
 
 | Command | Description | Required Role |
-|---------|-------------|---------------|
+| ------- | ----------- | ------------- |
+| N/A     | N/A         | N/A           |
 
 ## 🚀 Quick Start (Run Locally)
 
