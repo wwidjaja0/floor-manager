@@ -31,55 +31,7 @@ See the [design document](doc/design.md) for full design details.
 
 ## 🚀 Quick Start (Run Locally)
 
-### Prerequisites
-
-- Node.js version 22 or higher
-- npm (Node Package Manager)
-
-### 🔧 Configuration
-
-The bot requires the following permissions:
-
-TODO
-
-Database Setup
-
-TODO
-
-### Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/wwidjaja0/floor-manager.git
-    ```
-
-2. Navigate into the project source directory:
-
-    ```bash
-    cd floor-manager/src/
-    ```
-
-3. Install dependencies:
-
-    ```bash
-    npm install
-    ```
-
-4. Create a `.env` file in the `src/` directory and add your Discord bot token and database connection string.
-
-    ```env
-    DISCORD_TOKEN=your_discord_bot_token
-    DATABASE_URL=your_database_connection_string
-    ```
-
-   Replace `your_discord_bot_token` and `your_database_connection_string` with your actual values.
-
-5. Start the bot:
-
-    ```bash
-    npm start
-    ```
+See the Pre-requisites and Setting Up the Environment and Running the Bot sections in the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## 🤝 Contributing
 
@@ -96,7 +48,4 @@ For bug reports, feature requests, or more, please go to the [GitHub Issues](htt
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-<!-- markdownlint-disable no-inline-html -->
-<div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/wwidjaja0">wwidjaja0</a></sub>
-</div>
+Built with care by [wwidjaja0](https://github.com/wwidjaja0).
