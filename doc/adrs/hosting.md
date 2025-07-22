@@ -1,3 +1,0 @@
-# Hosting - ADR
-
-TODO

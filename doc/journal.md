@@ -4,8 +4,12 @@
 
 - [Development Journal and Changelog by wwidjaja0](#development-journal-and-changelog-by-wwidjaja0)
   - [Table of Contents](#table-of-contents)
+  - [July 2025](#july-2025)
     - [7.7.25](#7725)
     - [7.9.25](#7925)
+    - [7.21.25](#72125)
+
+## July 2025
 
 ### 7.7.25
 
@@ -40,6 +44,23 @@ How will we keep hosts accountable for payments? These are proposed (Preventativ
 
 Next TODOs:
 
-- [ ] Figure out what Database to use and update CONTRIBUTING.md with setup instructions.
-- [ ] Create User Personas and User Flow Diagrams.
+- [x] Figure out what Database to use and update CONTRIBUTING.md with setup instructions.
+- [x] Create User Personas and User Flow Diagrams.
 - [ ] Create ADRs for features.
+
+### 7.21.25
+
+- Finished the design document and decided to remove ADRs for the sake of simplicity.
+- Settled on using Firebase Functions and Firestore for the bot's hosting and backend respectively.
+- Figured out that this will likely be a serverless architecture.
+
+Next TODOs:
+
+- [ ] Read up on documentation to figure out how Firebase and Firestore work.
+- [ ] Setup repository on GitHub to get ready to push code.
+  - [ ] Create branches: main for production and dev for development.
+  - [ ] Create a pull request template.
+  - [ ] Create a issues template.
+  - [ ] Set up GitHub Actions for CI/CD.
+    - [ ] Set up ESLint and Prettier for code formatting.
+    - [ ] Set up testing framework (e.g., Jest) for unit tests.

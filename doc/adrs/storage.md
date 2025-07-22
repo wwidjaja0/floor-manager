@@ -1,3 +1,0 @@
-# Storage - ADR
-
-TODO
