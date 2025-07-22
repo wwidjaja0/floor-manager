@@ -48,4 +48,4 @@ For bug reports, feature requests, or more, please go to the [GitHub Issues](htt
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Built with care by [wwidjaja0](https://github.com/wwidjaja0).
+Built with care by [wwidjaja0](https://wwidjaja.dev/).
