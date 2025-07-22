@@ -1,0 +1,28 @@
+name: Prettier Format Check
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: ['**']
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        working-directory: ./src
+        run: npm ci
+
+      - name: Run Prettier check
+        working-directory: ./src
+        run: npx prettier . --check
