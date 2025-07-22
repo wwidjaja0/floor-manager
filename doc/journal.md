@@ -57,10 +57,17 @@ Next TODOs:
 Next TODOs:
 
 - [ ] Read up on documentation to figure out how Firebase and Firestore work.
-- [ ] Setup repository on GitHub to get ready to push code.
-  - [ ] Create branches: main for production and dev for development.
-  - [ ] Create a pull request template.
-  - [ ] Create a issues template.
-  - [ ] Set up GitHub Actions for CI/CD.
-    - [ ] Set up ESLint and Prettier for code formatting.
-    - [ ] Set up testing framework (e.g., Jest) for unit tests.
+- [x] Setup repository on GitHub to get ready to push code.
+  - [x] Create branches: main for production and dev for development.
+  - [x] Create a pull request template.
+  - [x] Create a issues template.
+  - [x] Set up GitHub Actions for CI/CD.
+    - [x] Set up Prettier for code formatting.
+    - [x] Set up testing framework (e.g., Jest) for unit tests.
+
+### 7.22.25
+
+- Created a pull request template and issues template.
+- Setup a package.json and package-lock.json.
+- Added Jest and Prettier as dev dependencies.
+- Created dev branch.
