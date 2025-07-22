@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./src
-        run: npm install --save-dev jest
+        run: npm ci
 
       - name: Run Jest tests
         working-directory: ./src

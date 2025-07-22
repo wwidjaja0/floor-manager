@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ## ✨ What’s Changed
 
 Brief summary of the changes or new feature.
