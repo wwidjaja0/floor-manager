@@ -42,7 +42,7 @@ How will we keep hosts accountable for payments? These are proposed (Preventativ
 - Figured out which permissions our Discord bot needs.
 - Should we use Stripe for gov ID verification?
 
-Next TODOs:
+TODO:
 
 - [x] Figure out what Database to use and update CONTRIBUTING.md with setup instructions.
 - [x] Create User Personas and User Flow Diagrams.
@@ -54,7 +54,7 @@ Next TODOs:
 - Settled on using Firebase Functions and Firestore for the bot's hosting and backend respectively.
 - Figured out that this will likely be a serverless architecture.
 
-Next TODOs:
+TODO:
 
 - [ ] Read up on documentation to figure out how Firebase and Firestore work.
 - [x] Setup repository on GitHub to get ready to push code.
@@ -71,3 +71,7 @@ Next TODOs:
 - Setup a package.json and package-lock.json.
 - Added Jest and Prettier as dev dependencies.
 - Created dev branch.
+
+TODO:
+
+- [ ] Read up on documentation to figure out how Firebase and Firestore work.
