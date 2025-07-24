@@ -74,4 +74,17 @@ TODO:
 
 TODO:
 
-- [ ] Read up on documentation to figure out how Firebase and Firestore work.
+- [x] Read up on documentation to figure out how Firebase and Firestore work.
+
+### 7.23.25
+
+- Read up on some initial documentation for Firebase and Firestore.
+- Read up on some initial documentation for Discord.js.
+- Currently reading up and formulating ideas for the bot's potential architecture.
+
+TODO:
+
+- [ ] Continue reading documentation for Firestore, and Discord.js.
+- [ ] [discord.js - creating the main file](https://discordjs.guide/creating-your-bot/main-file.html#running-your-application)
+- [ ] [firestore - index types](https://firebase.google.com/docs/firestore/query-data/index-overview)
+- [ ] Might wanna look into aws for hosting...

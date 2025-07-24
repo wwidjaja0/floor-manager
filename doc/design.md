@@ -53,7 +53,6 @@ There are three main kinds of users considered in our design:
 [Discord.js](https://discord.js.org/): For interacting with the Discord API.
 [Node.js](https://nodejs.org/): JavaScript runtime for executing server-side logic.
 [Firestore (Firebase)](https://firebase.google.com/docs/firestore): A scalable NoSQL cloud database to manage persistent data.
-[Firebase Functions](https://firebase.google.com/docs/functions): Serverless backend to host and run the bot 24/7.
 
 How will data be stored and managed in the bot?
 
