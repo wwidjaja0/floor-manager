@@ -1,18 +1,17 @@
-<!-- markdownlint-disable MD041 -->
-## ✨ What’s Changed
+## what changed
 
-Brief summary of the changes or new feature.
+brief summary of the changes or new feature
 
-## 🧪 How to Test
+## how to test
 
-Steps to manually test or verify this change.
+steps to manually test or verify this change
 
-## 📎 Related Issues
+## related issues
 
-e.g. Closes #123
+e.g. closes #123
 
-## ✅ Checklist
+## checklist
 
-- [ ] My code follows the style of the project
-- [ ] I’ve tested my changes locally
-- [ ] I’ve updated documentation or comments if needed
+- [ ] my code follows the style of the project
+- [ ] i’ve tested my changes locally
+- [ ] i’ve updated documentation or comments if needed

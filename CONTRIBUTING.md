@@ -34,28 +34,28 @@ TODO: Add instructions for setting up the database connection. This will depend 
 1. have node.js version 22 or higher installed
 2. clone the repository:
 
-    ```bash
-    git clone https://github.com/wwidjaja0/floor-manager.git
-    ```
+   ```bash
+   git clone https://github.com/wwidjaja0/floor-manager.git
+   ```
 
 3. navigate to the `src/` directory:
 
-    ```bash
-    cd floor-manager/src/
-    ```
+   ```bash
+   cd floor-manager/src/
+   ```
 
 4. install dependencies:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 5. create an `.env` file in the `src/` directory from the `.env.example` and fill out required fields
 6. run the bot:
 
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 ## file structure
 
@@ -73,22 +73,22 @@ floor-manager/
 2. create a branch (see [branch naming conventions](https://conventionalbranch.org/)): `git checkout -b branch-name`
 3. make changes (and add tests)
 
-    to ensure all tests pass, run:
+   to ensure all tests pass, run:
 
-    ```bash
-    npm test
-    ```
+   ```bash
+   npm test
+   ```
 
 4. commit changes (see [commit message conventions](https://www.conventionalcommits.org/en/v1.0.0/)):
 
-    ```bash
-    git commit -m 'feat: add new feature'
-    ```
+   ```bash
+   git commit -m 'feat: add new feature'
+   ```
 
 5. push to the remote branch:
 
-    ```bash
-    git push origin branch-name
-    ```
+   ```bash
+   git push origin branch-name
+   ```
 
 6. submit a pull request

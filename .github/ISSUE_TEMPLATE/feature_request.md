@@ -1,20 +1,19 @@
 ---
-name: "✨ Feature request"
-about: Suggest a new idea or improvement
-title: "[FEATURE] - "
+name: "feature request"
+about: suggest a new idea or improvement
+title: "[feat] - "
 labels: enhancement
 assignees: wwidjaja0
-
 ---
 
-## What feature would you like to request?
+## what feature would you like to request?
 
-Clearly describe the feature or enhancement you're proposing.
+clearly describe the feature or enhancement you're proposing
 
-## Why is this feature useful?
+## why is this feature useful?
 
-Explain why this would improve the project or solve a problem.
+explain why this would improve the project or solve a problem
 
-## Related Issues (if any)
+## related issues (if any)
 
-Link to any related issues or PRs.
+link to any related issues or PRs

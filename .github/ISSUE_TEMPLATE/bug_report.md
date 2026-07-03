@@ -1,32 +1,31 @@
 ---
-name: "\U0001F41B Bug report"
-about: Report something that isn't working correctly in the bot
-title: "[BUG] - "
+name: "\U0001F41B bug report"
+about: report something that isn't working correctly in the bot
+title: "[bug] - "
 labels: bug
 assignees: wwidjaja0, VictorKuu
-
 ---
 
-## What happened?
+## what happened?
 
-Describe the unexpected behavior.
+describe the unexpected behavior
 
-## Steps to Reproduce
+## steps to reproduce
 
 1. ...
 2. ...
 3. ...
 
-## Expected Behavior
+## expected behavior
 
-What should have happened instead?
+what should have happened instead?
 
-## Bot Version / Environment
+## bot version / environment
 
-- Bot version: `x.x.x`
-- Node version: `x.x.x`
-- Discord.js version: `x.x.x`
+- bot version: `x.x.x`
+- node version: `x.x.x`
+- discord.js version: `x.x.x`
 
-## Additional Info
+## additional info
 
-Logs, screenshots, or context if helpful.
+logs, screenshots, or context if helpful

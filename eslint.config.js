@@ -4,9 +4,7 @@ import prettierPlugin from "eslint-plugin-prettier";
 
 export default [
   {
-    ignores: [
-      "eslint.config.js",
-    ],
+    ignores: ["eslint.config.js"],
   },
 
   js.configs.recommended,
