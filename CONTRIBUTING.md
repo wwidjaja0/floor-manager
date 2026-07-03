@@ -1,146 +1,94 @@
-# Contributing Guidelines Floor Manager
+# contributing.md
 
-If you want to contribute to the Floor Manager project, please follow this outline to set up your dev environment, run the bot, and test changes. This guide assumes you have a basic understanding of Node.js and Discord bot development.
+## table of contents
 
-## Table of Contents
+- [contributing.md](#contributingmd)
+  - [table of contents](#table-of-contents)
+  - [pre-reqs](#pre-reqs)
+    - [required discord bot permissions](#required-discord-bot-permissions)
+  - [env setup and running the bot](#env-setup-and-running-the-bot)
+    - [database setup](#database-setup)
+  - [file structure](#file-structure)
+  - [contributor workflow](#contributor-workflow)
 
-- [Contributing Guidelines Floor Manager](#contributing-guidelines-floor-manager)
-  - [Table of Contents](#table-of-contents)
-  - [Pre-requisites](#pre-requisites)
-    - [Discord Bot Permissions](#discord-bot-permissions)
-  - [Setting Up the Environment and Running the Bot](#setting-up-the-environment-and-running-the-bot)
-  - [File Structure](#file-structure)
-  - [Development Workflow](#development-workflow)
+## pre-reqs
 
-## Pre-requisites
-
-- Node.js version 22 or higher
-- npm (Node Package Manager)
+- node.js version 22 or higher
+- npm (node package manager)
 - git
-- Your Discord bot token
+- a discord bot token
 - INSERT DATABASE USED HERE
-- A Discord server you own or have permission in
-- A code editor (e.g., Visual Studio Code)
+- a discord server you own or have permission in
+- an ide (e.g., vs code)
 
-### Discord Bot Permissions
+### required discord bot permissions
 
-To allow your bot to function properly, you need to give it the following bot permissions:
+- tbd
 
-- Create Events
-- Moderate Members (TODO: See if this is needed)
-- Send Messages
-- Create Private Threads
-- Send Messages in Threads
-- Read Message History
-- Mention Everyone
-- Add Reactions (TODO: See if this is needed)
-- Create Polls (TODO: See if this is needed)
+## env setup and running the bot
 
-## Setting Up the Environment and Running the Bot
-
-### Database Setup
+### database setup
 
 TODO: Add instructions for setting up the database connection. This will depend on the database you choose to use (e.g., MongoDB, PostgreSQL, etc.). Ensure you have the necessary configuration in your `.env` file.
 
-1. Ensure you have Node.js version 22 or higher installed.
-2. Clone the repository:
-
-    Using HTTPS:
+1. have node.js version 22 or higher installed
+2. clone the repository:
 
     ```bash
     git clone https://github.com/wwidjaja0/floor-manager.git
     ```
 
-    Using SSH:
-
-    ```bash
-    git clone git@github.com:wwidjaja0/floor-manager.git
-    ```
-
-3. Navigate into the project source directory:
+3. navigate to the `src/` directory:
 
     ```bash
     cd floor-manager/src/
     ```
 
-4. Install dependencies:
+4. install dependencies:
 
     ```bash
     npm install
     ```
 
-    or if you prefer Yarn:
-
-    ```bash
-    yarn install
-    ```
-
-5. Create a `.env` file in the `src/` directory and add your Discord bot token and database connection string:
-
-    ```env
-    DISCORD_TOKEN=your_discord_token
-    DATABASE_URL=your_database_url
-    ```
-
-    Replace `your_discord_token` and `your_database_url` with your actual values.
-
-6. Run the bot:
+5. create an `.env` file in the `src/` directory from the `.env.example` and fill out required fields
+6. run the bot:
 
     ```bash
     npm start
     ```
 
-    or if you prefer Yarn:
-
-    ```bash
-    yarn start
-    ```
-
-## File Structure
-
-Now that you should have a working instance of the bot, here's a brief overview of the file structure:
+## file structure
 
 ```bash
 floor-manager/
-├── doc/
-│   ├── adrs/              -- Architectural Decision Records.
-│   ├── branding/          -- Branding assets.
-│   ├── design.md          -- Main design document for the bot.
-│   └── journal.md         -- Development journal and changelog.
-├── src/
-│   ├── commands/          -- Command handlers.
-│   ├── node_modules/
-│   ├── .env
-│   ├── index.js           -- Main entry point for the bot.
-│   ├── package-lock.json
-│   └── package.json
-├── .gitignore
-├── LICENSE
-└── README.md
+├── doc/                   -- documentation
+├── src/                   -- source code
+│   ├── commands/          -- command handlers
+│   └── index.js           -- main entry point for the bot
 ```
 
-## Development Workflow
+## contributor workflow
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes (and add tests)
+1. fork the github repo
+2. create a branch (see [branch naming conventions](https://conventionalbranch.org/)): `git checkout -b branch-name`
+3. make changes (and add tests)
 
-    To ensure all tests pass, run:
+    to ensure all tests pass, run:
 
     ```bash
     npm test
     ```
 
-4. Commit your changes:
+4. commit changes (see [commit message conventions](https://www.conventionalcommits.org/en/v1.0.0/)):
 
     ```bash
-    git commit -m 'Add feature'
+    git commit -m 'feat: add new feature'
     ```
 
-5. Push to the branch:
+5. push to the remote branch:
 
     ```bash
-    git push origin feature-name
+    git push origin branch-name
     ```
 
-6. Submit a pull request
+6. submit a pull request

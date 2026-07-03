@@ -1,5 +1,7 @@
 # Floor Manager Bot Design Doc and Roadmap
 
+TODO: REWORK
+
 The main design document for the Floor Manager Discord bot.
 
 ## Table of Contents
