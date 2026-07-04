@@ -21,7 +21,7 @@ export default [
       "prettier/prettier": "error",
 
       "arrow-spacing": ["warn", { before: true, after: true }],
-      "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
+      "brace-style": ["error", "1tbs"],
       "comma-dangle": ["error", "always-multiline"],
       "comma-spacing": "error",
       "comma-style": "error",
