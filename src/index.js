@@ -1,24 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
-import {
-  Client,
-  Collection,
-  Events,
-  GatewayIntentBits,
-  MessageFlags,
-} from "discord.js";
+import { Client, Collection, GatewayIntentBits } from "discord.js";
 import "dotenv/config";
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages],
 });
 
-client.once(Events.ClientReady, (readyClient) => {
-  console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-});
-
 client.commands = new Collection();
-
 const foldersPath = path.join(import.meta.dirname, "commands");
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -46,31 +35,20 @@ for (const folder of commandFolders) {
   }
 }
 
-client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
-  const command = interaction.client.commands.get(interaction.commandName);
+const eventsPath = path.join(import.meta.dirname, "events");
+const eventFiles = fs
+  .readdirSync(eventsPath)
+  .filter((file) => file.endsWith(".js"));
+for (const file of eventFiles) {
+  const filePath = path.join(eventsPath, file);
+  const eventModule = await import(filePath);
+  const event = eventModule.default;
 
-  if (!command) {
-    console.error(`no command ${interaction.commandName} found`);
-    return;
+  if (event.once) {
+    client.once(event.name, (...args) => event.execute(...args));
+  } else {
+    client.on(event.name, (...args) => event.execute(...args));
   }
-
-  try {
-    await command.execute(interaction);
-  } catch (e) {
-    console.error(e);
-    if (interaction.replied || interaction.deferred) {
-      await interaction.followUp({
-        content: "there was an error",
-        flags: MessageFlags.Ephemeral,
-      });
-    } else {
-      await interaction.reply({
-        content: "there was an error",
-        flags: MessageFlags.Ephemeral,
-      });
-    }
-  }
-});
+}
 
 client.login(process.env.DISCORD_BOT_TOKEN);
