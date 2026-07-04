@@ -8,11 +8,11 @@ a discord bot for managing the "floor" for the poker club @ uc san diego discord
 
 ## features
 
-- table management
-- ledgers
-- p2p payment verification
-- host accountability
 - edu email verification
+- WIP table management
+- WIP ledgers
+- WIP p2p payment verification
+- WIP host accountability
 
 see the [design document](doc/design.md) for full design details
 
