@@ -1,8 +1,5 @@
-import { SlashCommandBuilder } from "discord.js";
-import { Resend } from "resend";
-import "dotenv/config";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { resend } from "../../services/email.js";
 
 const testmail = {
   data: new SlashCommandBuilder()
@@ -14,8 +11,10 @@ const testmail = {
         .setDescription("recipient email address")
         .setRequired(true),
     ),
+
   async execute(interaction) {
     const email = interaction.options.getString("email");
+
     try {
       const { data, error } = await resend.emails.send({
         from: "Poker Club @ UC San Diego <noreply@wwidjaja.com>",
@@ -25,20 +24,20 @@ const testmail = {
       });
 
       if (error) {
-        return await interaction.reply({
+        return interaction.reply({
           content: String(error.message || error),
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
       }
 
-      await interaction.reply({
+      return interaction.reply({
         content: `Email sent: ${data?.id ?? "success"}`,
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     } catch (err) {
-      await interaction.reply({
+      return interaction.reply({
         content: String(err),
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
   },
