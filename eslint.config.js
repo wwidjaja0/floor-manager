@@ -27,7 +27,7 @@ export default [
       "comma-style": "error",
       curly: ["error", "multi-line", "consistent"],
       "dot-location": ["error", "property"],
-      indent: ["error", "tab"],
+      indent: ["error", 2],
       "keyword-spacing": "error",
       "max-nested-callbacks": ["error", { max: 4 }],
       "max-statements-per-line": ["error", { max: 2 }],
