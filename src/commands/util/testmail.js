@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, MessageFlags } from "discord.js";
-import { resend } from "../../services/email.js";
+import { getResend } from "../../services/email.js";
 
 const testmail = {
   data: new SlashCommandBuilder()
@@ -16,7 +16,7 @@ const testmail = {
     const email = interaction.options.getString("email");
 
     try {
-      const { data, error } = await resend.emails.send({
+      const { data, error } = await getResend().emails.send({
         from: "Poker Club @ UC San Diego <noreply@wwidjaja.com>",
         to: [email],
         subject: "Test email",

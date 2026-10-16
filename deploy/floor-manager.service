@@ -1,0 +1,18 @@
+[Unit]
+Description=floor-manager Discord bot (UCSD edu email verification)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/floor-manager
+EnvironmentFile=/opt/floor-manager/.env
+ExecStart=/usr/bin/node src/index.js
+Restart=on-failure
+RestartSec=5
+# Optional: create a dedicated user on the host and set User=/Group=
+# User=floor-manager
+# Group=floor-manager
+
+[Install]
+WantedBy=multi-user.target
