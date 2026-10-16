@@ -38,10 +38,10 @@ TODO: Add instructions for setting up the database connection. This will depend 
    git clone https://github.com/wwidjaja0/floor-manager.git
    ```
 
-3. navigate to the `src/` directory:
+3. navigate to the repo root:
 
    ```bash
-   cd floor-manager/src/
+   cd floor-manager
    ```
 
 4. install dependencies:
@@ -50,20 +50,31 @@ TODO: Add instructions for setting up the database connection. This will depend 
    npm install
    ```
 
-5. create an `.env` file in the `src/` directory from the `.env.example` and fill out required fields
-6. run the bot:
+5. create a `.env` file in the **repo root** (same directory as `package.json`) from `.env.example` and fill out required fields
+6. register slash commands with Discord (once per guild / after command changes):
+
+   ```bash
+   npm run deploy-commands
+   ```
+
+7. run the bot:
 
    ```bash
    npm start
    ```
 
+for hosting on a Tailscale SSH server with systemd, see [doc/deploy.md](doc/deploy.md).
+
 ## file structure
 
 ```bash
 floor-manager/
+├── deploy/                -- systemd unit for host deploy
 ├── doc/                   -- documentation
 ├── src/                   -- source code
 │   ├── commands/          -- command handlers
+│   ├── events/            -- discord event handlers
+│   ├── services/          -- shared services (e.g. resend email)
 │   └── index.js           -- main entry point for the bot
 ```
 

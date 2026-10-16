@@ -2,10 +2,21 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Client, Collection, GatewayIntentBits } from "discord.js";
-import "dotenv/config";
+import "./load-env.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+if (!process.env.DISCORD_BOT_TOKEN) {
+  console.error("missing DISCORD_BOT_TOKEN (set it in repo-root .env)");
+  process.exit(1);
+}
+
+if (!process.env.RESEND_API_KEY) {
+  console.warn(
+    "[WARNING] RESEND_API_KEY is not set; /testmail and email verification will fail until it is",
+  );
+}
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages],

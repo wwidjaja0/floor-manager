@@ -2,10 +2,17 @@ import { REST, Routes } from "discord.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import "dotenv/config";
+import "./load-env.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const required = ["DISCORD_BOT_TOKEN", "DISCORD_CLIENT_ID", "DISCORD_GUILD_ID"];
+const missing = required.filter((key) => !process.env[key]);
+if (missing.length > 0) {
+  console.error(`missing env: ${missing.join(", ")} (set in repo-root .env)`);
+  process.exit(1);
+}
 
 const commands = [];
 
@@ -51,4 +58,5 @@ try {
   console.log(`successfully reloaded ${data.length} application (/) commands`);
 } catch (e) {
   console.error(e);
+  process.exit(1);
 }
