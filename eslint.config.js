@@ -32,7 +32,6 @@ export default [
       "max-nested-callbacks": ["error", { max: 4 }],
       "max-statements-per-line": ["error", { max: 2 }],
       "no-console": "off",
-      "no-empty-function": "error",
       "no-floating-decimal": "error",
       "no-inline-comments": "error",
       "no-lonely-if": "error",

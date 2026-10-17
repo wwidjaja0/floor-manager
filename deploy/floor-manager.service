@@ -1,0 +1,15 @@
+[Unit]
+Description=floor-manager Discord bot (email verification)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/wwidjaja0/floor-manager
+EnvironmentFile=/home/wwidjaja0/floor-manager/.env
+Environment=PATH=/home/wwidjaja0/.nvm/versions/node/v22.23.3/bin:/usr/bin:/bin
+ExecStart=/home/wwidjaja0/.nvm/versions/node/v22.23.3/bin/npm run start
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
