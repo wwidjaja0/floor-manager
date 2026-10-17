@@ -1,54 +1,69 @@
+import "./load-env.js";
 import { REST, Routes } from "discord.js";
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import "dotenv/config";
+import { readdirSync } from "fs";
+import { fileURLToPath, pathToFileURL } from "url";
+import path from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const token = process.env.DISCORD_TOKEN;
+const clientId = process.env.DISCORD_CLIENT_ID;
+
+if (!token || !clientId) {
+  const missing = [
+    !token && "DISCORD_TOKEN",
+    !clientId && "DISCORD_CLIENT_ID",
+  ].filter(Boolean);
+  console.error(`Missing env: ${missing.join(", ")}`);
+  process.exit(1);
+}
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const commands = [];
+const commandsPath = path.join(__dirname, "commands");
 
-const foldersPath = path.join(__dirname, "commands");
-const commandFolders = fs.readdirSync(foldersPath);
+for (const category of readdirSync(commandsPath)) {
+  const categoryPath = path.join(commandsPath, category);
 
-for (const folder of commandFolders) {
-  const commandsPath = path.join(foldersPath, folder);
-  const commandFiles = fs
-    .readdirSync(commandsPath)
-    .filter((file) => file.endsWith(".js"));
+  const files = readdirSync(categoryPath).filter((file) =>
+    file.endsWith(".js"),
+  );
 
-  for (const file of commandFiles) {
-    const filePath = path.join(commandsPath, file);
-    const { default: command } = await import(filePath);
+  for (const file of files) {
+    const filePath = pathToFileURL(path.join(categoryPath, file)).href;
 
-    if ("data" in command && "execute" in command) {
+    const commandModule = await import(filePath);
+    const command = commandModule.default ?? commandModule;
+
+    if (command?.data && command?.execute) {
       commands.push(command.data.toJSON());
     } else {
-      console.log(
-        `[WARNING] the command at ${filePath} is missing a required "data" or "execute" property`,
-      );
+      console.warn(`[WARNING] ${file} missing data or execute`);
     }
   }
 }
 
-const rest = new REST().setToken(process.env.DISCORD_BOT_TOKEN);
+const rest = new REST().setToken(token);
 
-/**
- * change to applicationCommands(clientID) for global deployment
- */
-try {
-  console.log(`started refreshing ${commands.length} application (/) commands`);
+let route;
 
-  const data = await rest.put(
-    Routes.applicationGuildCommands(
-      process.env.DISCORD_CLIENT_ID,
-      process.env.DISCORD_GUILD_ID,
-    ),
-    { body: commands },
+if (process.env.DISCORD_GUILD_ID) {
+  route = Routes.applicationGuildCommands(
+    clientId,
+    process.env.DISCORD_GUILD_ID,
   );
+} else {
+  route = Routes.applicationCommands(clientId);
+}
 
-  console.log(`successfully reloaded ${data.length} application (/) commands`);
-} catch (e) {
-  console.error(e);
+try {
+  console.log(`Registering ${commands.length} commands...`);
+
+  const data = await rest.put(route, {
+    body: commands,
+  });
+
+  console.log(`Registered ${data.length} commands.`);
+} catch (err) {
+  console.error(err);
+  process.exit(1);
 }
