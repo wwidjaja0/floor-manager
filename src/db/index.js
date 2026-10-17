@@ -14,7 +14,10 @@ const dbPath = process.env.DATABASE_PATH
 
 const sqlite = new Database(dbPath);
 
-export const db = drizzle(sqlite, {
+// drizzle-orm 1.0 rc: pass `{ client }` — `drizzle(sqlite, opts)` treats the
+// Database instance as a config object and opens a separate empty DB.
+export const db = drizzle({
+  client: sqlite,
   schema,
 });
 
